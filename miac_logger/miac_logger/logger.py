@@ -8,10 +8,10 @@ class BaseLogger:
     # Levels to write to file
     _LEVELS = ['WARNING', 'ERROR', ]
 
-    def __init__(self, path_to_log_file: str = os.getcwd(), log_file_name: str = 'app.log'):
+    def __init__(self, path_to_log_file: str = os.getcwd(), log_file_name: str = 'app.log', current_file: str = None):
         self.level = None
         self.message = None
-        self.current_file = f'{os.path.basename(os.getcwd())}.py'
+        self.current_file = current_file
         self.path_to_log_file = path_to_log_file
         self.log_file_name = log_file_name
 
